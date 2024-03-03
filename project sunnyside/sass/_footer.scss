@@ -1,0 +1,64 @@
+@import "config";
+
+.footer-wrapper {
+  padding-block: 3rem;
+  background-color: $clr-light-cyan;
+
+  .footer {
+    width: min(300px, 90%);
+    margin: auto;
+  }
+
+  .footer-logo img {
+    margin: auto;
+    width: 10rem;
+    margin-bottom: 2.5rem;
+    filter: invert(27%) sepia(23%) saturate(873%) hue-rotate(116deg) brightness(98%) contrast(92%);
+  }
+
+  .footer-links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.5rem;
+
+    li {
+      color: $clr-dark-cyan;
+      cursor: pointer;
+    }
+  }
+
+  .footer-social ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.footer-social li:is(:hover, :focus) img {
+  filter: brightness(100000%);
+}
+
+.footer-links ul li:is(:hover, :focus) {
+  color: $clr-white;
+}
+
+@media (min-width: 600px) {
+  
+  .footer-wrapper {
+    padding-block: 4rem;
+  
+    .footer-logo img {
+      margin-bottom: 3.5rem;
+    }
+  
+    .footer-links ul {
+      margin-bottom: 5rem;
+    }
+  }
+}

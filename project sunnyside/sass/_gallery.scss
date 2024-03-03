@@ -1,0 +1,21 @@
+@import "config";
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  .gallery-img-container {
+
+    img {
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

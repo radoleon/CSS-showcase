@@ -1,0 +1,160 @@
+@import "config";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr
+}
+
+.grid-item-2 {
+  grid-row: 1/2;
+}
+
+.grid-text-card,
+.grid-image-text-card .grid-i-t-article,
+.grid-image-text-card .grid-i-t-title {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.grid-text-card {
+  text-align: center;
+  padding-block: 3rem;
+
+  .grid-text-title {
+    font-family: $ff-secondary;
+    font-weight: $fw-bold;
+    color: $clr-dark-blue;
+    font-size: 2rem;
+  }
+
+  .grid-text-article {
+    color: $clr-medium-gray;
+    line-height: 1.5;
+    margin-block: 1.5rem;
+  }
+
+  .grid-text-link {
+    display: inline-block;
+    font-family: $ff-secondary;
+    text-transform: uppercase;
+    color: $clr-dark-blue;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      width: 115%;
+      height: 0.5rem;
+      border-radius: 100vw;
+      background-color: $clr-yellow;
+      position: absolute;
+      top: 65%;
+      left: calc(-15%/2);
+      z-index: -1;
+      opacity: 0.4;
+      transition: 300ms ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+.grid-item-4 > .grid-text-card > .grid-text-link::after {
+  background-color: $clr-red;
+}
+
+.grid-image-text-card {
+  padding: 20rem 0 3rem;
+  text-align: center;
+
+  h3 {
+    font-size: 1.5rem;
+    font-family: $ff-secondary;
+    padding-bottom: 1.5rem;
+    font-weight: $fw-bold;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+.grid-item-5 .grid-image-text-card {
+  background-image: url(../images/desktop/image-graphic-design.jpg);
+  background-size: cover;
+  background-position: center 35%;
+  color: $clr-dark-cyan;
+}
+
+.grid-item-6 .grid-image-text-card {
+  background-image: url(../images/desktop/image-photography.jpg);
+  background-size: cover;
+  background-position: center 35%;
+  color: $clr-dark-blue;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-1, .grid-item-4 {
+    display: grid;
+    place-items: center;
+  }
+  
+  .grid-item-2 {
+    grid-row: unset;
+  }
+  
+  .grid-text-card,
+  .grid-image-text-card .grid-i-t-article,
+  .grid-image-text-card .grid-i-t-title {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .grid-item {
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .grid-image-text-card {
+    height: 100%;
+    padding: 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    h3 {
+      padding-bottom: 2rem;
+    }
+  }
+
+  .grid-image-card {
+    height: 100%;
+  }
+
+  .grid-image-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .grid-text-card {
+    text-align: left;
+
+    .grid-text-article {
+      margin-block: 2rem;
+    }
+
+    .grid-text-link {
+      margin-left: 0.5rem;
+    }
+  }  
+}

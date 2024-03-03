@@ -1,0 +1,59 @@
+/* imports */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+/* variables */
+$ff-primary: 'Barlow', sans-serif;
+$ff-secondary: 'Fraunces', serif;
+$fw-bold: 900;
+
+$clr-red: hsl(7, 99%, 70%);
+$clr-yellow: hsl(51, 100%, 49%);
+$clr-dark-cyan: hsl(167, 40%, 24%);
+$clr-light-cyan: hsl(168, 39%, 56%);
+$clr-dark-blue: hsl(212, 27%, 19%);
+$clr-dark-gray: hsl(213, 9%, 39%);
+$clr-medium-gray: hsl(232, 10%, 55%);
+$clr-light-gray: hsl(210, 4%, 67%);
+$clr-white: hsl(0, 0%, 100%);
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  // border: 1px dashed red;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $ff-primary;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* utility-classes */
+.container {
+  width: min(90%, 1200px);
+  margin: auto;
+}

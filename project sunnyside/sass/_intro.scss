@@ -1,0 +1,160 @@
+@import "config";
+
+.intro {
+  height: 100vh;
+  background-image: url(../images/mobile/image-header.jpg);
+  background-size: cover;
+  background-position: top center;
+
+  .intro-title {
+    margin-top: 7rem;
+
+    h2 {
+      font-family: $ff-secondary;
+      font-weight: $fw-bold;
+      color: $clr-white;
+      word-spacing: 0.5rem;
+      letter-spacing: 0.25rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+    }
+
+    img {
+      margin: auto;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.header {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .logo {
+    width: 7.5rem;
+  }
+
+  .nav {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 3rem);
+    background-color: $clr-white;
+    transition: 500ms ease-in-out;
+
+    .nav-links {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-block: 2rem;
+
+      .nav-link{
+        width: fit-content;
+        margin: auto;
+        color: $clr-medium-gray;
+        cursor: pointer;
+        transition: 300ms ease;
+
+        &:is(:hover, :focus):not(:nth-of-type(4)) {
+          opacity: 0.6;
+        }
+      }
+
+      .nav-link:nth-of-type(4) {
+        font-family: $ff-secondary;
+        font-size: 0.90rem;
+        text-transform: uppercase;
+        padding: 0.75rem 1.25rem;
+        border-radius: 100vw;
+        background-color: $clr-yellow;
+        color: $clr-dark-blue;
+
+        &:is(:hover, :focus) {
+          background-color: hsla(212, 27%, 19%, 10%);
+          color: $clr-white;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 1.5rem 1.5rem;
+      border-color: transparent transparent $clr-white transparent;
+    }
+  }
+
+  .nav.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .intro {
+    background-image: url(../images/desktop/image-header.jpg);
+
+    .intro-title {
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      img {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  .header {
+
+    .logo {
+      width: 8.5rem;
+    }
+
+    .nav {
+      position: static;
+      width: auto;
+      top: unset;
+      background-color: inherit;
+      opacity: 1;
+      pointer-events: auto;
+  
+      .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+        margin-block: 0;
+  
+        .nav-link {
+          color: $clr-white;
+        }
+  
+        .nav-link:nth-of-type(4) {
+          background-color: $clr-white;
+          color: $clr-dark-blue;
+        }
+      }
+  
+      &::before {
+        display: none;
+      }
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}
